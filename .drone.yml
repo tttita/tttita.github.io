@@ -7,6 +7,4 @@ steps:
   image: golang
   pull: true
   commands:
-  - go build
-  - go test 
-  - echo drone-test5 > index.html
+  - echo drone-test7 > index.html
