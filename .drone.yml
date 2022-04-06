@@ -1,10 +1,11 @@
----
 kind: pipeline
+type: docker
 name: default
 
 steps:
 - name: backend
-  image: goland:1.13-alpine
+  image: goland
+  pull: true
   commands:
   - go build
   - go test 
