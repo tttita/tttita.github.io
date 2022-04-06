@@ -4,7 +4,7 @@ name: default
 
 steps:
 - name: backend
-  image: goland
+  image: golang
   pull: true
   commands:
   - go build
