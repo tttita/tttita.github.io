@@ -28,11 +28,13 @@ steps:
   image: appleboy/drone-scp
   settings:
     host:
-      - 3.134.227.207
+      from_secret: ssh_host
     username:
-      - root
-    key: 
-      - from_secret: SSH_PASSWORD
+      from_secret: ssh_username
+    password:
+      from_secret: ssh_password
+    port:
+      from_secret: ssh_port
   target:
     - /data/drone/tttita.test
   source:
