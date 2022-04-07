@@ -2,12 +2,20 @@ kind: pipeline
 type: docker
 name: default
 
-workspace:
-  base: /data/drone/tttita.test
-  path: example
 steps:
-- name: backend
-  image: golang
-  pull: true
+- name: install
+  image: node:lts-alpine3.15
   commands:
-  - echo drone-test7 > index.html
+      - node -v
+      - npm -v
+      - yarn --version
+      - yarn config set cache-folder .yarn-cache
+      - yarn install --pure-lockfile
+- name: scp
+  image: appleboy/drone-scp
+  host: 34.85.60.220
+  username: hanesumi
+  secrets: [ ssh_password ]
+  target: /Users/hanesumi/Desktop/Drone/tttita.test
+  source:
+    - index.html
