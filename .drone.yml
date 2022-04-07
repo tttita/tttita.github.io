@@ -3,8 +3,20 @@ type: docker
 name: default
 
 steps:
-- name: backend
-  image: golang
-  pull: true
+- name: install
+  image: node:lts-alpine3.15
   commands:
-    - go test
+      - node -v
+      - npm -v
+      - yarn --version
+      - yarn config set cache-folder .yarn-cache
+      - yarn install --pure-lockfile
+
+- name: testing
+  image: node:lts-alpine3.15
+  commands:
+    - yarn run test
+- name: testing2
+  image: node:lts-alpine3.15
+  commands:
+    - yarn run lint
