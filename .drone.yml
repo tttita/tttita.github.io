@@ -18,8 +18,8 @@ steps:
       - 3.134.227.207
     username:
       - root
-   password:
-    - secrets: [ SSH_PASSWORD ]
+    key: 
+      - from_secret: SSH_PASSWORD
     port:
       - 22
   script:
@@ -31,8 +31,8 @@ steps:
       - 3.134.227.207
     username:
       - root
-    password:
-     - secrets: [ SSH_PASSWORD ]
+    key: 
+      - from_secret: SSH_PASSWORD
   target:
     - /data/drone/tttita.test
   source:
