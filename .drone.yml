@@ -15,13 +15,13 @@ steps:
   image: appleboy/drone-ssh
   settings:
     host: 
-      - 3.134.227.207
-    username:
-      - root
+      from_secret: ssh_host
+    username: 
+      from_secret: ssh_username
     key: 
-      - from_secret: SSH_PASSWORD
-    port:
-      - 22
+      from_secret: ssh_key
+    port: 
+      from_secret: ssh_port
   script:
     - echo "hello"
 - name: scp
