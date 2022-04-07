@@ -23,19 +23,5 @@ steps:
     port: 
       from_secret: ssh_port
   script:
-    - echo "hello"
-- name: scp
-  image: appleboy/drone-scp
-  settings:
-    host:
-      from_secret: ssh_host
-    username:
-      from_secret: ssh_username
-    password:
-      from_secret: ssh_password
-    port:
-      from_secret: ssh_port
-  target:
-    - /data/drone/tttita.test
-  source:
-    - index.html
+    - cd /data/drone/tttita.test/
+    - git pull
