@@ -11,12 +11,12 @@ steps:
       - yarn --version
       - yarn config set cache-folder .yarn-cache
       - yarn install --pure-lockfile
-
-- name: testing
-  image: node:lts-alpine3.15
-  commands:
-    - yarn run test
-- name: testing2
-  image: node:lts-alpine3.15
-  commands:
-    - yarn run lint
+- name: scp
+  image: appleboy/drone-scp
+  host: 3.134.227.207
+  username: centos
+  secrets: [ ssh_password ]
+  target: /data/drone/tttita.test
+  source: 
+    - index.html
+ 
