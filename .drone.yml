@@ -18,8 +18,8 @@ steps:
       from_secret: ssh_host
     username: 
       from_secret: ssh_username
-    key: 
-      from_secret: ssh_key
+    password: 
+      from_secret: ssh_password
     port: 
       from_secret: ssh_port
   script:
