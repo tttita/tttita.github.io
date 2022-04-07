@@ -2,12 +2,9 @@ kind: pipeline
 type: docker
 name: default
 
-workspace:
-  base: /data/drone/tttita.test
-  path: example
 steps:
 - name: backend
   image: golang
   pull: true
   commands:
-  - echo drone-test7 > index.html
+    - go test
