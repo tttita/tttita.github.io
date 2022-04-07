@@ -19,7 +19,7 @@ steps:
     username:
       - root
     password:
-      - from_secret: ssh_password
+      - from_secret: SSH_PASSWORD
     port:
       - 22
   script:
@@ -32,7 +32,7 @@ steps:
     username:
       - root
     password:
-      - from_secret: ssh_password
+      - from_secret: SSH_PASSWORD
   target:
     - /data/drone/tttita.test
   source:
