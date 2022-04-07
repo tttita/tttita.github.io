@@ -11,10 +11,21 @@ steps:
       - yarn --version
       - yarn config set cache-folder .yarn-cache
       - yarn install --pure-lockfile
+- name: ssh
+  image: appleboy/drone-ssh
+  settings:
+    host: 
+      - 3.134.227.207
+    username:
+     - root
+    password:
+    - from_secret: ssh_password
+  script:
+    - echo "hello"
 - name: scp
   image: appleboy/drone-scp
   settings:
-    host: 
+    host:
       - 3.134.227.207
     username:
      - root
