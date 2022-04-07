@@ -13,8 +13,8 @@ steps:
       - yarn install --pure-lockfile
 - name: scp
   image: appleboy/drone-scp
-  host: ec2-3-134-227-207.us-east-2.compute.amazonaws.com
-  username: centos
+  host: 3.134.227.207
+  username: root
   secrets: [ ssh_password ]
   target: /data/drone/tttita.test
   source:
