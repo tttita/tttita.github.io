@@ -20,6 +20,7 @@ steps:
      - root
     password:
     - from_secret: ssh_password
-  target: /data/drone/tttita.test
+  target:
+   - /data/drone/tttita.test
   source:
     - index.html
