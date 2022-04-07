@@ -17,9 +17,11 @@ steps:
     host: 
       - 3.134.227.207
     username:
-     - root
+      - root
     password:
-    - from_secret: ssh_password
+      - from_secret: ssh_password
+    port:
+      - 22
   script:
     - echo "hello"
 - name: scp
@@ -28,10 +30,10 @@ steps:
     host:
       - 3.134.227.207
     username:
-     - root
+      - root
     password:
-    - from_secret: ssh_password
+      - from_secret: ssh_password
   target:
-   - /data/drone/tttita.test
+    - /data/drone/tttita.test
   source:
     - index.html
