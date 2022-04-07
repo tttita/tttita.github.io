@@ -22,6 +22,6 @@ steps:
       from_secret: ssh_password
     port: 
       from_secret: ssh_port
-  script:
+    script:
     - cd /data/drone/tttita.test/
     - git pull
