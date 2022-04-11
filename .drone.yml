@@ -24,7 +24,7 @@ steps:
       from_secret: ssh_port
     script:
     - cd /data/drone/tttita.test
-    - rm-rf index.html
+    - rm -rf index.html
 - name: scp
   image: appleboy/drone-scp
   settings:
